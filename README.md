@@ -29,7 +29,7 @@ And the output will be
 
 Simple as that.
 
-Of course you can specify one-word arguments delimiter and multi-word commands delimiter.
+Of course you can specify one-word arguments delimiter and multi-word arguments delimiter.
 
 ## Add to maven
 
@@ -48,6 +48,6 @@ Then add dependency with latest commit id as a version
 <dependency>
 	<groupId>com.github.michalszulowski</groupId>
 	<artifactId>text-command-parser</artifactId>
-	<version>5b45f66</version>
+	<version>CHECK_LATEST_COMMIT_ID</version>
 </dependency>
 ```

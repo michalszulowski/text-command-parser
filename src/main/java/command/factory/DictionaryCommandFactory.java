@@ -12,10 +12,13 @@ public class DictionaryCommandFactory implements CommandFactory {
     private Map<String, Function<List<String>, Command>> supportedCommands;
     private TxtCommandParser commandParser;
 
-    //TODO add parametrized delimiters
     public DictionaryCommandFactory() {
+        this(' ', '\"');
+    }
+    
+    public DictionaryCommandFactory(char delimiter, char combinedArgDelimiter) {
         supportedCommands = new HashMap<>();
-        commandParser = new OneCharDelimiterCommandParser(' ', '\"');
+        commandParser = new OneCharDelimiterCommandParser(delimiter, combinedArgDelimiter);
     }
 
     @Override
