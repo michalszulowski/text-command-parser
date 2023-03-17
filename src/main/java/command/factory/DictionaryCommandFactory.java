@@ -24,7 +24,7 @@ public class DictionaryCommandFactory implements CommandFactory {
     @Override
     public Command getCommand(String ofInput) {
         if (ofInput.length() == 0) {
-            throw new IllegalArgumentException("Empty text cannot be a command");
+            throw new NoSuchCommandException("Empty text cannot be a command");
         }
         TextCommand textCommand = commandParser.parse(ofInput);
         return getCommandOf(textCommand);
@@ -36,7 +36,7 @@ public class DictionaryCommandFactory implements CommandFactory {
 
     private Command getCommandOf(TextCommand command) {
         if (!supportedCommands.containsKey(command.getName())) {
-            throw new IllegalArgumentException("No command with name: " + command.getName());
+            throw new NoSuchCommandException(command.getName());
         }
         return supportedCommands.get(command.getName()).apply(command.getArguments());
     }
