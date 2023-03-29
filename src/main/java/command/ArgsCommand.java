@@ -8,4 +8,10 @@ public abstract class ArgsCommand implements Command {
     public ArgsCommand(List<String> arguments) {
         this.arguments = arguments;
     }
+
+    protected void expectArgsCount(int count) {
+        if (arguments.size() < count) {
+            throw new NotEnoughArgsProvidedException(count, arguments.size());
+        }
+    }
 }
